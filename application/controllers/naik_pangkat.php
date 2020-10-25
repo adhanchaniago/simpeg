@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class naik_pangkat extends CI_Controller {
+class Naik_pangkat extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();

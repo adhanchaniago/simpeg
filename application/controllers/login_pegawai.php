@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login_pegawai extends CI_Controller {
+class Login_pegawai extends CI_Controller {
 
 	
 	function __construct(){
