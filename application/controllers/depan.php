@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class depan extends CI_Controller {
+class Depan extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();

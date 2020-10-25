@@ -1,5 +1,5 @@
 <?php
-class m_berkas_kp extends CI_Model {
+class M_berkas_kp extends CI_Model {
     
 	var $tb = "kenaikan_pangkat";
 	var $id = "id";

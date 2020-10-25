@@ -1,5 +1,5 @@
 <?php
-class m_pegawai extends CI_Model {
+class M_pegawai extends CI_Model {
     
 	var $tb = "pegawai";
 	var $id = "id";
