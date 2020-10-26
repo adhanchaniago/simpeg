@@ -34,7 +34,6 @@
 						        <th >Nama</th>
 						        <th >Golongan Akhir</th>
 						        <th >Jenis Kelamin</th>
-						        <th >Username</th>
 						        <th style="width:200px">Action</th>
 						    </tr>
 						    </thead>
@@ -48,7 +47,6 @@
 				<td>
 				<?php  if ($r->jk == "L") { echo "Laki-Laki"; } else { echo "Perempuan"; }  ?>
 				</td>
-				<td><?php echo $r->username ?></td>
 				<td>
 				<a href="pegawai/delete/<?php echo $r->id ?>" class="btn btn-danger btn-sm">HAPUS</a>
 				<a href="pegawai/edit/<?php echo $r->id ?>" class="btn btn-info btn-sm">EDIT</a>

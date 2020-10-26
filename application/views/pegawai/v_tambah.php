@@ -134,36 +134,29 @@
 								
 								<div class="form-group row">
 									<div class="col-xs-6" >
-									<label>Pendidikan</label>
-									 <select class="form-control" name="pendidikan">
-										<option value="SMA">SMA</option>
-										<option value="SMK">SMK</option>
-										<option value="D3">DIPLOMA III</option>
-										<option value="S1">STRATA I</option>
-										<option value="S2">STRATA II</option>
-										<option value="S3">STRATA III</option>
-									  </select>
+										<label>Pendidikan</label>
+										<select class="form-control" name="pendidikan">
+											<option value="SMA">SMA</option>
+											<option value="SMK">SMK</option>
+											<option value="D3">DIPLOMA III</option>
+											<option value="S1">STRATA I</option>
+											<option value="S2">STRATA II</option>
+											<option value="S3">STRATA III</option>
+										</select>
 									</div>
 									<div class="col-xs-6" >
-									<label>Kedudukan Hukum</label>
-									 <select class="form-control" name="ked_hukum">
-										<option value="Aktif">Aktif</option>
-										<option value="Tugas Belajar">Tugas Belajar</option>
-										<option value="PNS kena hukuman disiplin">PNS kena hukuman disiplin</option>
-										<option value="Masa Persiapan Pensiun">Masa Persiapan Pensiun</option>
-										<option value="CPNS yang belum dapat SK CPNS">CPNS yang belum dapat SK CPNS</option>
-									  </select>
+										<div class="form-group">
+										<label>Unit Kerja</label>
+										<select class="form-control" name="id_unit_kerja">
+										<?php foreach ($unit_kerja->result() as $r) {	?>	
+											<option value="<?=$r->id_unit_kerja?>"><?=$r->nama_unit_kerja?></option>
+										<?php } ?>	
+										</select>
+									</div>
 									</div>
 								</div>
 								
-								<div class="form-group">
-									<label>Unit Kerja</label>
-									 <select class="form-control" name="id_unit_kerja">
-									<?php foreach ($unit_kerja->result() as $r) {	?>	
-										<option value="<?=$r->id_unit_kerja?>"><?=$r->nama_unit_kerja?></option>
-									<?php } ?>	
-									</select>
-								</div>
+								
 								
 							
 							
