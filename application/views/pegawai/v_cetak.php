@@ -18,7 +18,7 @@
 <div style="width:1000px;" class="preview">
 	<div class="title">
 	<span style="float:left">
-		<img class="logo" style="width:60px" src="<?php echo base_url(); ?>upload/logo_papua_barat.png">
+		<img class="logo" style="width:40px" src="<?php echo base_url(); ?>upload/logo_papua_barat.png">
 	</span>
 	<?php foreach ($auth->result() as $r) { ?>
 	<b>LAPORAN DATA PEGAWAI</b><br>
