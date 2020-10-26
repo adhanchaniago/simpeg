@@ -60,7 +60,6 @@
 			<li class="<?php if ($menu == "pegawai") { echo "active"; } ?>"><a href="<?php echo base_url("pegawai");?>"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Data Pegawai</a></li>
 		</ul>
 		<?php
-		echo $this->session->userdata('level');
 			if ($this->session->userdata('level') == '1') {
 		?>
 		<form role="search" >
