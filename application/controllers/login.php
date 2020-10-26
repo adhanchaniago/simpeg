@@ -32,7 +32,7 @@ class Login extends CI_Controller {
 			$password = md5($this->input->post('password'));
 			$where = array(
 				'username' => $username,
-				'password' => $password
+				'password' => $password 
 				);
 			$cek = $this->m_admin->cek_login($where)->num_rows();
 			$res = $this->m_admin->get_user($username);
