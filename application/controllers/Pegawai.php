@@ -59,7 +59,7 @@ class Pegawai extends CI_Controller {
 			$id_unit_kerja   			 =  $this->input->post('id_unit_kerja');
 			$nip   			 =  $this->input->post('nip');
 			$nama       	 =  $this->input->post('nama');
-			
+			$id_admin		 = $this->session->userdata('id_admin');
 			$data           =  array('tmpt_lahir' 		=>$tmpt_lahir,
                                      'tgl_lahir'     	=>$tgl_lahir,
                                      'gol_awal'     	=>$gol_awal,
@@ -74,7 +74,8 @@ class Pegawai extends CI_Controller {
                                      'pendidikan'				=>$pendidikan,
                                      'id_unit_kerja'				=>$id_unit_kerja,
                                      'nip'       =>$nip,
-                                     'nama'       =>$nama,);
+									 'nama'       =>$nama,
+									'id_admin'	=> $id_admin);
 									 
 			$this->m_pegawai->post($data);	
 			$this->session->set_flashdata('status', "Data Pegawai <b>Berhasil</b>  disimpan");
@@ -110,12 +111,9 @@ class Pegawai extends CI_Controller {
 			$jenis_jabatan   		 =  $this->input->post('jenis_jabatan');
 			$nama_jabatan   		 =  $this->input->post('nama_jabatan');
 			$pendidikan   			 =  $this->input->post('pendidikan');
-			$ked_hukum   			 =  $this->input->post('ked_hukum');
 			$id_unit_kerja   			 =  $this->input->post('id_unit_kerja');
 			$nip   			 =  $this->input->post('nip');
-			$nama       	 =  $this->input->post('nama');
-			$username        =  $this->input->post('username');
-			$password        =  md5($this->input->post('password'));
+			$nama       	 =  $this->input->post('nama'););
 			
 			$data           =  array('tmpt_lahir' 		=>$tmpt_lahir,
                                      'tgl_lahir'     	=>$tgl_lahir,
