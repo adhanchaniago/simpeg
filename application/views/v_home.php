@@ -48,7 +48,23 @@
 					</div>
 				</div>
 			</div>
-			
+			<?php if($this->session->userdata('level') == '1'){ ?>
+			<div class="col-xs-12 col-md-6 col-lg-4">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-3 widget-left">
+							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-9 widget-right">
+							<div class="large"><?=$pegawai?> 
+							<a href="<?php echo base_url('operator');?>" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> Selengkapnya</a>
+							</div>
+							<div class="text-muted">Data Operator</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 		</div><!--/.row-->
 					
 						

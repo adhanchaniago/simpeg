@@ -17,4 +17,10 @@ class M_admin extends CI_Model{
 		$this->db->where($this->id, $key);
 		$this->db->update($this->tb, $data);
 	}	
+	
+	function get_user($username)
+    {
+        $this->db->where('username', $username);
+        return $this->db->get($this->tb)->row();
+    }
 }

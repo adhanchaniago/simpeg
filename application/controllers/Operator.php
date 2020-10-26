@@ -9,11 +9,9 @@ class Operator extends CI_Controller {
 		parent::__construct();
 		if (!$this->session->has_userdata('username')) {
 			redirect("login");
-		} else {
-			if ($this->session->userdata('level') != 'admin') {
-				redirect("naik_pangkat");	
-			}
-		}	
+		} elseif($this->session->userdata('level') == '2') {
+			redirect("home");
+		}
 		$this->load->model('M_operator');
 		
 	}
@@ -23,5 +21,11 @@ class Operator extends CI_Controller {
 		$data['menu'] = "operator";
 		$data['operator']=    $this->M_operator->get_all();
 		$this->template->load('template','operator/v_index',$data);
-    }
+	}
+	
+	public function reset_password($id_admin){
+		$this->M_operator->reset_password($id_admin);
+		$this->session->set_flashdata('status', "Password Operator Berhasil direset menjadi <b>123456</b>");
+		redirect('operator');
+	}
 }

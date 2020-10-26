@@ -18,14 +18,15 @@
 <div style="width:1000px;" class="preview">
 	<div class="title">
 	<span style="float:left">
-		<img class="logo" style="width:100px" src="<?php echo base_url(); ?>assets/mansel.png">
+		<img class="logo" style="width:60px" src="<?php echo base_url(); ?>upload/mansel.png">
 	</span>
-	<b>LAPORAN DATA PANGKAT PEGAWAI</b><br>
-	<b>BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA</b><br>
-	<b>KABUPATEN MANOKWARI SELATAN</b><br>
-	<small>Alamat : Jl. Soejarwo Condronegoro, SH <span style="margin-left:20px"></style>
-	email : bkd_mansel@yahoo.co.id Kode Pos : 98355
-</small>	
+	<?php foreach ($auth->result() as $r) { ?>
+	<b>LAPORAN DATA PEGAWAI</b><br>
+	<b><?php echo strtoupper($r->nama_instansi);?></b><br>
+	<small>Alamat : <?php echo $r->alamat_instansi;?> <span style="margin-left:20px"></style>
+	Email : <?php echo $r->email_instansi;?> No. Telp : <?php echo $r->notelp_instansi;?>
+	</small>	
+	<?php } ?>
 	<div class="border"></div>
 	</div>
 	
@@ -39,7 +40,6 @@
 						        <th >Unit Kerja</th>
 						        <th >Jenis Kelamin</th>
 						        <th >Golongan Akhir</th>
-						        <th >Jenis Kenaikan Pangkat</th>
 						    </tr>
 						    </thead>
 							<?php 
@@ -53,7 +53,6 @@
 				<td><?php echo $r->nama_unit_kerja ?></td>
 				<td><?php if ($r->jk == "L") { echo "Laki-Laki"; } else { echo "Perempuan"; } ?></td>
 				<td><?php  echo $r->gol_akhir ?></td>
-				<td><?php echo $r->jenis_jabatan ?></td>
 				
 			</tr>
 			<?php } if (count($pegawai->result()) == 0) { ?>

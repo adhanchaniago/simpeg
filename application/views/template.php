@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="<?php echo base_url();?>mansel.ico">
 <title>Sistem Informasi Kepegawaian</title>
 
 <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet">
@@ -18,7 +17,7 @@
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
-<![endif]-->
+<![endif]--> 
 
 </head>
 
@@ -60,6 +59,10 @@
 			<li class="<?php if ($menu == "unit_kerja") { echo "active"; } ?>"><a href="<?php echo base_url("unit_kerja");?>"><svg class="glyph stroked notepad "><use xlink:href="#stroked-notepad"/></svg> Unit Kerja</a></li>
 			<li class="<?php if ($menu == "pegawai") { echo "active"; } ?>"><a href="<?php echo base_url("pegawai");?>"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Data Pegawai</a></li>
 		</ul>
+		<?php
+		echo $this->session->userdata('level');
+			if ($this->session->userdata('level') == '1') {
+		?>
 		<form role="search" >
 			<div class="form-group ">
 				<h3 class="text-center">Menu Admin</h3>
@@ -67,8 +70,8 @@
 		</form>
 		<ul class="nav menu">
 			<li class="<?php if ($menu == "operator") { echo "active"; } ?>"><a href="<?php echo base_url("operator");?>"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Data Operator</a></li>
-			
 		</ul>
+		<?php } ?>
 
 	</div><!--/.sidebar-->
 		

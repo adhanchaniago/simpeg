@@ -9,20 +9,16 @@ class Pegawai extends CI_Controller {
 		parent::__construct();
 		if (!$this->session->has_userdata('username')) {
 			redirect("login");
-		} else {
-			if ($this->session->userdata('level') != 'admin') {
-				redirect("naik_pangkat");	
-			}
-		}	
+		}
 		$this->load->model('m_pegawai');
-		$this->load->model('m_unit_kerja');
-		
+		$this->load->model('m_admin');
+		 
 	}
 	
 	public function index()
 	{
 		$data['menu'] = "pegawai";
-		$data['pegawai']=    $this->m_pegawai->get_all();
+		$data['pegawai']=    $this->m_pegawai->get_all($this->session->userdata('level'));
 		$this->template->load('template','pegawai/v_index',$data);
 	}
 	
@@ -30,7 +26,8 @@ class Pegawai extends CI_Controller {
 	public function cetak()
 	{
 		$data['menu'] = "pegawai";
-		$data['pegawai']=    $this->m_pegawai->get_all();
+		$data['auth']=    $this->m_admin->get_auth();
+		$data['pegawai']=    $this->m_pegawai->get_all($this->session->userdata('level'));
 		$this->load->view('pegawai/v_cetak',$data);
 	}
 	

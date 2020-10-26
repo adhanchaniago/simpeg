@@ -10,7 +10,7 @@
 		
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Ubah Password User</div>
+					<div class="panel-heading">Ubah Profil Operator</div>
 					<div class="panel-body">
 					
 					<?php if ($this->session->flashdata('status') != null) { ?>
@@ -26,25 +26,56 @@
 								<input value="<?php echo $r->id_admin ?>" name="id_admin" type="hidden"  >
 								
 																
-								<div class="form-group">
+								<div class="form-group col-lg-6">
 									<label>Nama</label>
 									<input value="<?php echo $r->nama ?>" name="nama" type="text" class="form-control">
 								</div>
 								
 								
 																
-								<div class="form-group">
+								<div class="form-group col-lg-6">
 									<label>Username</label>
 									<input value="<?php echo $r->username ?>" name="username" type="text" class="form-control">
 								</div>
 								
-								<div class="form-group">
+								<div class="form-group col-lg-6">
 									<label>Password</label>
 									<input value="" name="password" type="password" class="form-control">
 								</div>
 								
-								<button name="submit" type="submit" class="btn btn-primary">Simpan</button>
-								<button type="reset" class="btn btn-warning">Reset</button>
+								<div class="form-group col-lg-6">
+									<label>Nama Instansi</label>
+									<input value="<?php echo $r->nama_instansi ?>" name="nama_instansi" type="text" class="form-control">
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Alamat</label>
+									<input value="<?php echo $r->alamat_instansi ?>" name="alamat_instansi" type="text" class="form-control">
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Website</label>
+									<input value="<?php echo $r->website_instansi ?>" name="website_instansi" type="text" class="form-control">
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Email</label>
+									<input value="<?php echo $r->email_instansi ?>" name="email_instansi" type="text" class="form-control">
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>No. Telp</label>
+									<input value="<?php echo $r->notelp_instansi ?>" name="notelp_instansi" type="text" class="form-control">
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Logo Instansi</label>
+									<input value="" name="logo_instansi" type="file" class="form-control">
+								</div>
+								<div class="form-group col-lg-6">
+									<button name="submit" type="submit" class="btn btn-primary">Simpan</button>
+									<button type="reset" class="btn btn-warning">Reset</button>
+								</div>
 							
 						</form>
 						<?php } ?>

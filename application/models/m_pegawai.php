@@ -18,10 +18,18 @@ class M_pegawai extends CI_Model {
 		return $this->db->get_where($this->tb,$where);
 	}	
    
-	function get_all()
+	function get_all($level)
 	{
-		
-		return $this->db->query("SELECT * FROM pegawai p, unit_kerja u WHERE p.id_unit_kerja = u.id_unit_kerja");
+		if($level=='1')
+		{
+			$query = $this->db->query("SELECT * FROM pegawai p, unit_kerja u WHERE p.id_unit_kerja = u.id_unit_kerja");
+		}
+		else
+		{
+			$id_admin = $this->session->userdata('id_admin');
+			$query = $this->db->query("SELECT * FROM pegawai p, unit_kerja u WHERE p.id_unit_kerja = u.id_unit_kerja AND id_admin='$id_admin'");
+		}
+		return $query;
 	}  
 	
 	function post($data)

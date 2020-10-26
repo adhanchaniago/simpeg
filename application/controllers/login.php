@@ -26,13 +26,7 @@ class Login extends CI_Controller {
 	}
  
 	function login(){
-		if ($this->session->has_userdata('username')) {
-			if ($this->session->userdata('level') == 'pegawai') {
-				redirect("naik_pangkat");	
-			} else if ($this->session->userdata('level') == 'admin') {
-				redirect("home");	
-			} 
-		} 	
+			
 		if (isset($_POST['submit'])) {
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));
@@ -41,11 +35,13 @@ class Login extends CI_Controller {
 				'password' => $password
 				);
 			$cek = $this->m_admin->cek_login($where)->num_rows();
+			$res = $this->m_admin->get_user($username);
 			if($cek > 0){
 	 
 				$data_session = array(
 					'username' 		=> $username,
-					'level' 	=> "admin"
+					'level' 	=> $res->level,
+					'id_admin'	=> $res->id_admin,
 					);
 				
 				$this->session->set_userdata($data_session);

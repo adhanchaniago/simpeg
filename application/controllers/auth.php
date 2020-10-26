@@ -70,11 +70,7 @@ class Auth extends CI_Controller {
 	{	
 		if (!$this->session->has_userdata('username')) {
 			redirect("login");
-		} else {
-			if ($this->session->userdata('level') != 'admin') {
-				redirect("naik_pangkat");	
-			}
-		}	
+		} 
 		
 		$data['menu'] = "auth";
 		$data['auth']=    $this->m_admin->get_auth();
@@ -86,23 +82,40 @@ class Auth extends CI_Controller {
 	{	
 		if (!$this->session->has_userdata('username')) {
 			redirect("login");
-		} else {
-			if ($this->session->userdata('level') != 'admin') {
-				redirect("naik_pangkat");	
-			}
-		}	
+		}
 		if(isset($_POST['submit'])){
-			$id_admin   			 =  $this->input->post('id_admin');
-			$nama       	 =  $this->input->post('nama');
-			$username        =  $this->input->post('username');
-			$password        =  md5($this->input->post('password'));
-			
-			$data           =  array('nama'     	=>$nama,
-                                     'username'       =>$username,
-                                     'password'       =>$password);
-									 
+			$id_admin   		=  $this->input->post('id_admin');
+			$nama       	 	=  $this->input->post('nama');
+			$username        	=  $this->input->post('username');
+			$nama_instansi 		= $this->input->post('nama_instansi');
+			$alamat_instansi	= $this->input->post('alamat_instansi');
+			$website_instansi	= $this->input->post('website_instansi');
+			$email_instansi		= $this->input->post('email_instansi');
+			$notelp_instansi	= $this->input->post('notelp_instansi');
+
+			if($this->input->post('password',true)){
+				$password        =  md5($this->input->post('password'));
+				$data   =  array('nama'     	=>$nama,
+                        	 'username'       	=>$username,
+							 'password'       	=>$password,
+							 'nama_instansi'	=>$nama_instansi,
+							 'alamat_instansi'	=>$alamat_instansi,
+							 'website_instansi'	=>$website_instansi,
+							 'email_instansi'	=>$email_instansi,
+							 'notelp_instansi'	=>$notelp_instansi						 
+							);
+			} else {
+			$data   =  array('nama'     	=>$nama,
+                        	 'username'       =>$username,
+							 'nama_instansi'	=>$nama_instansi,
+							 'alamat_instansi'	=>$alamat_instansi,
+							 'website_instansi'	=>$website_instansi,
+							 'email_instansi'	=>$email_instansi,
+							 'notelp_instansi'	=>$notelp_instansi	
+							);
+			}						 
 			$this->m_admin->ganti($data, $id_admin);	
-			$this->session->set_flashdata('status', 'Data berhasil diganti');
+			$this->session->set_flashdata('status', 'Data profil operator berhasil diganti');
 			if ($_SESSION['username'] == $username) {
 				redirect('auth/admin');
 			} else {

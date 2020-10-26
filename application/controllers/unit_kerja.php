@@ -9,11 +9,7 @@ class Unit_kerja extends CI_Controller {
 		parent::__construct();
 		if (!$this->session->has_userdata('username')) {
 			redirect("login");
-		} else {
-			if ($this->session->userdata('level') != 'admin') {
-				redirect("naik_pangkat");	
-			}
-		}	
+		} 
 		$this->load->model('m_unit_kerja');
 		
 	}
