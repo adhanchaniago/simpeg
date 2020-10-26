@@ -25,17 +25,7 @@
 									<input required name="nama" type="text" class="form-control" maxlength="35">
 								</div>
 								
-													
-								<div class="form-group">
-									<label>Username</label>
-									<input required name="username" type="text" class="form-control" maxlength="10">
-								</div>
-								
-								<div class="form-group">
-									<label>Password</label>
-									<input required name="password" type="password" class="form-control" maxlength="10">
-								</div>
-																
+														
 								
 								<div class="form-group row">
 									<div class="col-xs-6" >

@@ -12,6 +12,7 @@ class Pegawai extends CI_Controller {
 		}
 		$this->load->model('m_pegawai');
 		$this->load->model('m_admin');
+		$this->load->model('m_unit_kerja');
 		 
 	}
 	
@@ -58,8 +59,6 @@ class Pegawai extends CI_Controller {
 			$id_unit_kerja   			 =  $this->input->post('id_unit_kerja');
 			$nip   			 =  $this->input->post('nip');
 			$nama       	 =  $this->input->post('nama');
-			$username        =  $this->input->post('username');
-			$password        =  md5($this->input->post('password'));
 			
 			$data           =  array('tmpt_lahir' 		=>$tmpt_lahir,
                                      'tgl_lahir'     	=>$tgl_lahir,
@@ -73,12 +72,9 @@ class Pegawai extends CI_Controller {
                                      'jenis_jabatan'				=>$jenis_jabatan,
                                      'nama_jabatan'				=>$nama_jabatan,
                                      'pendidikan'				=>$pendidikan,
-                                     'ked_hukum'				=>$ked_hukum,
                                      'id_unit_kerja'				=>$id_unit_kerja,
                                      'nip'       =>$nip,
-                                     'nama'       =>$nama,
-                                     'username'       =>$username,
-                                     'password'       =>$password);
+                                     'nama'       =>$nama,);
 									 
 			$this->m_pegawai->post($data);	
 			$this->session->set_flashdata('status', "Data Pegawai <b>Berhasil</b>  disimpan");
