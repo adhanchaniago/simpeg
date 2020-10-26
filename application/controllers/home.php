@@ -10,7 +10,7 @@ class Home extends CI_Controller {
 		}	
 		
 		$this->load->model('m_pegawai');
-		//$this->load->model('m_berkas_kp');
+		$this->load->model('m_operator');
 		$this->load->model('m_unit_kerja');
 		
 	}
@@ -19,7 +19,7 @@ class Home extends CI_Controller {
 	{
 		$data['menu'] = "home";
 		$data['pegawai']=    $this->m_pegawai->get_all()->num_rows();
-		//$data['berkas']=    $this->m_berkas_kp->get_all()->num_rows();
+		$data['operator']=    $this->m_operator->get_all()->num_rows();
 		$data['unit_kerja']=    $this->m_unit_kerja->get_all()->num_rows();
 		$this->template->load('template','v_home', $data);
 	}

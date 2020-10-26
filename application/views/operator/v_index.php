@@ -28,7 +28,7 @@
 					<?php } ?>
 					
 					<div class="form-group ">
-					<a href="unit_kerja/post" class="btn btn-success btn-md">TAMBAH</a>
+					<a href="operator/tambah" class="btn btn-success btn-md">TAMBAH</a>
 					</div>
 						<table class="table table-responsive table-bordered data">
 						    <thead>

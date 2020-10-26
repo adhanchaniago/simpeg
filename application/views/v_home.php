@@ -56,7 +56,7 @@
 							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
 						</div>
 						<div class="col-sm-9 col-lg-9 widget-right">
-							<div class="large"><?=$pegawai?> 
+							<div class="large"><?=$operator?> 
 							<a href="<?php echo base_url('operator');?>" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> Selengkapnya</a>
 							</div>
 							<div class="text-muted">Data Operator</div>

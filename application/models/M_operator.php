@@ -20,4 +20,9 @@ class M_operator extends CI_Model {
 		$this->db->where($this->id, $id_admin);
 		$this->db->update($this->tb, array('password'=>'e10adc3949ba59abbe56e057f20f883e'));
 	}
+
+	function post($data)
+	{
+		$this->db->insert($this->tb,$data);
+	}
 }
