@@ -113,7 +113,7 @@ class Pegawai extends CI_Controller {
 			$pendidikan   			 =  $this->input->post('pendidikan');
 			$id_unit_kerja   			 =  $this->input->post('id_unit_kerja');
 			$nip   			 =  $this->input->post('nip');
-			$nama       	 =  $this->input->post('nama'););
+			$nama       	 =  $this->input->post('nama');
 			
 			$data           =  array('tmpt_lahir' 		=>$tmpt_lahir,
                                      'tgl_lahir'     	=>$tgl_lahir,
