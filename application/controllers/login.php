@@ -39,6 +39,7 @@ class Login extends CI_Controller {
 			if($cek > 0){
 	 
 				$data_session = array(
+					'nama' 		=> $nama,
 					'username' 		=> $username,
 					'level' 	=> $res->level,
 					'id_admin'	=> $res->id_admin,
